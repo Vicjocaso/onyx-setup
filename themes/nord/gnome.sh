@@ -1,5 +1,5 @@
 #!/bin/bash
 
-OMAKUB_THEME_COLOR="blue"
-OMAKUB_THEME_BACKGROUND="nord/background.png"
-source $OMAKUB_PATH/themes/set-gnome-theme.sh
+VICJOUB_THEME_COLOR="blue"
+VICJOUB_THEME_BACKGROUND="nord/background.png"
+source $VICJOUB_PATH/themes/set-gnome-theme.sh

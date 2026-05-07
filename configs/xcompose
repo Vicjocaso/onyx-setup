@@ -1,5 +1,5 @@
-include "%H/.local/share/omakub/defaults/xcompose"
+include "%H/.local/share/vicjoub/defaults/xcompose"
 
 # Identification
-<Multi_key> <space> <n> : "$OMAKUB_USER_NAME"
-<Multi_key> <space> <e> : "$OMAKUB_USER_EMAIL"
+<Multi_key> <space> <n> : "$VICJOUB_USER_NAME"
+<Multi_key> <space> <e> : "$VICJOUB_USER_EMAIL"

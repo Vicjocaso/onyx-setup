@@ -1,0 +1,4 @@
+#!/bin/bash
+
+source $VICJOUB_PATH/bin/vicjoub-sub/header.sh
+source $VICJOUB_PATH/bin/vicjoub-sub/menu.sh
