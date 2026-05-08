@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ascii_art='
+read -r -d '' ascii_art << 'ASCIIEOF'
  __      ___       _             _
  \ \    / (_)     (_)           | |
   \ \  / / _  ___ _  ___  _   _| |__
@@ -8,7 +8,7 @@ ascii_art='
     \  /  | | (__| | (_) | |_| | |_) |
      \/   |_|\___|_|\___/ \__,_|_.__/
 
-'
+ASCIIEOF
 
 # Define the color gradient (shades of cyan and blue)
 colors=(
