@@ -8,7 +8,7 @@ apps=(
 	"spotify.desktop"
 	"steam.desktop"
 	"Docker.desktop"
-	"Vicjoub.desktop"
+	"Onyx.desktop"
 	"org.gnome.Settings.desktop"
 	"org.gnome.Nautilus.desktop"
 	"localsend_app.desktop"

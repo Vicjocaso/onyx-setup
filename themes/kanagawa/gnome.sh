@@ -1,5 +1,5 @@
 #!/bin/bash
 
-VICJOUB_THEME_COLOR="purple"
-VICJOUB_THEME_BACKGROUND="kanagawa/background.jpg"
-source $VICJOUB_PATH/themes/set-gnome-theme.sh
+ONYX_THEME_COLOR="purple"
+ONYX_THEME_BACKGROUND="kanagawa/background.jpg"
+source $ONYX_PATH/themes/set-gnome-theme.sh

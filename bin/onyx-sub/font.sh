@@ -15,7 +15,7 @@ set_font() {
 		fc-cache
 		cd -
 		clear
-		source $VICJOUB_PATH/ascii.sh
+		source $ONYX_PATH/ascii.sh
 	fi
 
 	gsettings set org.gnome.desktop.interface monospace-font-name "$font_name 10"
@@ -42,9 +42,9 @@ case $choice in
 	set_font "MesloLGS Nerd Font" "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Meslo.zip" "ttf"
 	;;
 "> Change size")
-	source $VICJOUB_PATH/bin/vicjoub-sub/font-size.sh
+	source $ONYX_PATH/bin/onyx-sub/font-size.sh
 	exit
 	;;
 esac
 
-source $VICJOUB_PATH/bin/vicjoub-sub/menu.sh
+source $ONYX_PATH/bin/onyx-sub/menu.sh

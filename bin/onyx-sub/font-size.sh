@@ -4,7 +4,7 @@ choice=$(gum choose {7..14} "<< Back" --height 11 --header "Choose your terminal
 
 if [[ $choice =~ ^[0-9]+$ ]]; then
 	sed -i "s/^size = .*$/size = $choice/g" ~/.config/alacritty/font-size.toml
-	source $VICJOUB_PATH/bin/vicjoub-sub/font-size.sh
+	source $ONYX_PATH/bin/onyx-sub/font-size.sh
 else
-	source $VICJOUB_PATH/bin/vicjoub-sub/font.sh
+	source $ONYX_PATH/bin/onyx-sub/font.sh
 fi

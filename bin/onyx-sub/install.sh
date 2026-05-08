@@ -24,7 +24,7 @@ if [[ "$CHOICE" == "<< Back"* ]] || [[ -z "$CHOICE" ]]; then
   # Don't install anything
   echo ""
 elif [[ "$CHOICE" == "> All"* ]]; then
-  INSTALLER_FILE=$(gum file $VICJOUB_PATH/install)
+  INSTALLER_FILE=$(gum file $ONYX_PATH/install)
 
   [[ -n "$INSTALLER_FILE" ]] &&
     gum confirm "Run installer?" &&
@@ -34,16 +34,16 @@ else
   INSTALLER=$(echo "$CHOICE" | awk -F ' {2,}' '{print $1}' | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
 
   case "$INSTALLER" in
-  "dev-editor") INSTALLER_FILE="$VICJOUB_PATH/bin/vicjoub-sub/install-dev-editor.sh" ;;
-  "web-apps") INSTALLER_FILE="$VICJOUB_PATH/install/desktop/optional/select-web-apps.sh" ;;
-  "dev-language") INSTALLER_FILE="$VICJOUB_PATH/install/terminal/select-dev-language.sh" ;;
-  "dev-database") INSTALLER_FILE="$VICJOUB_PATH/install/terminal/select-dev-storage.sh" ;;
-  "geekbench") INSTALLER_FILE="$VICJOUB_PATH/install/terminal/optional/app-geekbench.sh" ;;
-  *) INSTALLER_FILE="$VICJOUB_PATH/install/desktop/optional/app-$INSTALLER.sh" ;;
+  "dev-editor") INSTALLER_FILE="$ONYX_PATH/bin/onyx-sub/install-dev-editor.sh" ;;
+  "web-apps") INSTALLER_FILE="$ONYX_PATH/install/desktop/optional/select-web-apps.sh" ;;
+  "dev-language") INSTALLER_FILE="$ONYX_PATH/install/terminal/select-dev-language.sh" ;;
+  "dev-database") INSTALLER_FILE="$ONYX_PATH/install/terminal/select-dev-storage.sh" ;;
+  "geekbench") INSTALLER_FILE="$ONYX_PATH/install/terminal/optional/app-geekbench.sh" ;;
+  *) INSTALLER_FILE="$ONYX_PATH/install/desktop/optional/app-$INSTALLER.sh" ;;
   esac
 
   source $INSTALLER_FILE && gum spin --spinner globe --title "Install completed!" -- sleep 3
 fi
 
 clear
-source $VICJOUB_PATH/bin/vicjoub
+source $ONYX_PATH/bin/onyx

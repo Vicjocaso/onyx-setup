@@ -1,0 +1,4 @@
+#!/bin/bash
+
+source $ONYX_PATH/bin/onyx-sub/header.sh
+source $ONYX_PATH/bin/onyx-sub/menu.sh

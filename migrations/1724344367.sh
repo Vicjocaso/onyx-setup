@@ -7,7 +7,7 @@ fi
 
 # Only attempt to set configuration if fastfetch is not already set
 if [ ! -f "$HOME/.config/fastfetch/config.jsonc" ]; then
-  # Use Vicjoub fastfetch config
+  # Use Onyx fastfetch config
   mkdir -p ~/.config/fastfetch
-  cp "$VICJOUB_PATH/configs/fastfetch.jsonc" ~/.config/fastfetch/config.jsonc
+  cp "$ONYX_PATH/configs/fastfetch.jsonc" ~/.config/fastfetch/config.jsonc
 fi

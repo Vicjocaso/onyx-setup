@@ -1,5 +1,5 @@
-include "%H/.local/share/vicjoub/defaults/xcompose"
+include "%H/.local/share/onyx/defaults/xcompose"
 
 # Identification
-<Multi_key> <space> <n> : "$VICJOUB_USER_NAME"
-<Multi_key> <space> <e> : "$VICJOUB_USER_EMAIL"
+<Multi_key> <space> <n> : "$ONYX_USER_NAME"
+<Multi_key> <space> <e> : "$ONYX_USER_EMAIL"

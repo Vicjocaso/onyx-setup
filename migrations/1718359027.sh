@@ -9,7 +9,7 @@ ZELLIJ_THEMES_DIR="$HOME/.config/zellij/themes"
 if [ -L $ZELLIJ_THEMES_DIR ]; then
 	rm $ZELLIJ_THEMES_DIR
 	mkdir -p $ZELLIJ_THEMES_DIR
-	for dir in $VICJOUB_PATH/themes/*; do
+	for dir in $ONYX_PATH/themes/*; do
 		if [ -d "$dir" ]; then
 			zellij_file="$dir/zellij.kdl"
 			dir_name=$(basename "$dir")
@@ -21,53 +21,53 @@ fi
 
 # New neovim settings
 mkdir -p ~/.config/nvim/plugin/after
-cp $VICJOUB_PATH/configs/neovim/transparency.lua ~/.config/nvim/plugin/after/
+cp $ONYX_PATH/configs/neovim/transparency.lua ~/.config/nvim/plugin/after/
 sed -i 's/checker = { enabled = true }/checker = { enabled = true, notify = false }/g' ~/.config/nvim/lua/config/lazy.lua
-source ~/.local/share/vicjoub/applications/Neovim.sh
+source ~/.local/share/onyx/applications/Neovim.sh
 
 # New font size setup
-cp $VICJOUB_PATH/configs/alacritty/font-size.toml ~/.config/alacritty/
+cp $ONYX_PATH/configs/alacritty/font-size.toml ~/.config/alacritty/
 cp ~/.config/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml.bak
-cp $VICJOUB_PATH/configs/alacritty.toml ~/.config/alacritty/alacritty.toml
-source $VICJOUB_PATH/install/desktop/set-framework-text-scaling.sh
+cp $ONYX_PATH/configs/alacritty.toml ~/.config/alacritty/alacritty.toml
+source $ONYX_PATH/install/desktop/set-framework-text-scaling.sh
 
-cp $VICJOUB_PATH/themes/tokyo-night/alacritty.toml ~/.config/alacritty/theme.toml
-cp $VICJOUB_PATH/configs/alacritty/fonts/CaskaydiaMono.toml ~/.config/alacritty/font.toml
+cp $ONYX_PATH/themes/tokyo-night/alacritty.toml ~/.config/alacritty/theme.toml
+cp $ONYX_PATH/configs/alacritty/fonts/CaskaydiaMono.toml ~/.config/alacritty/font.toml
 
 # Set new Gnome settings
-source $VICJOUB_PATH/install/desktop/set-gnome-settings.sh
+source $ONYX_PATH/install/desktop/set-gnome-settings.sh
 
 # Install new apps
-source $VICJOUB_PATH/install/desktop/a-flatpak.sh
-source $VICJOUB_PATH/install/desktop/app-gnome-sushi.sh
-source $VICJOUB_PATH/install/desktop/app-localsend.sh
-source $VICJOUB_PATH/install/desktop/app-obsidian.sh
-source $VICJOUB_PATH/install/terminal/app-fastfetch.sh
-source $VICJOUB_PATH/install/terminal/apps-terminal.sh
+source $ONYX_PATH/install/desktop/a-flatpak.sh
+source $ONYX_PATH/install/desktop/app-gnome-sushi.sh
+source $ONYX_PATH/install/desktop/app-localsend.sh
+source $ONYX_PATH/install/desktop/app-obsidian.sh
+source $ONYX_PATH/install/terminal/app-fastfetch.sh
+source $ONYX_PATH/install/terminal/apps-terminal.sh
 
 # Add new desktop applications icons
-source $VICJOUB_PATH/applications/Vicjoub.sh
-source $VICJOUB_PATH/applications/About.sh
-source $VICJOUB_PATH/applications/Activity.sh
-source $VICJOUB_PATH/applications/Docker.sh
+source $ONYX_PATH/applications/Onyx.sh
+source $ONYX_PATH/applications/About.sh
+source $ONYX_PATH/applications/Activity.sh
+source $ONYX_PATH/applications/Docker.sh
 
 # Update icons of apps still installed
-[ -f ~/.local/share/applications/Basecamp.desktop ] && source $VICJOUB_PATH/applications/Basecamp.sh
-[ -f ~/.local/share/applications/HEY.desktop ] && source $VICJOUB_PATH/applications/HEY.sh
-[ -f ~/.local/share/applications/WhatsApp.desktop ] && source $VICJOUB_PATH/applications/WhatsApp.sh
+[ -f ~/.local/share/applications/Basecamp.desktop ] && source $ONYX_PATH/applications/Basecamp.sh
+[ -f ~/.local/share/applications/HEY.desktop ] && source $ONYX_PATH/applications/HEY.sh
+[ -f ~/.local/share/applications/WhatsApp.desktop ] && source $ONYX_PATH/applications/WhatsApp.sh
 
 # Set new app grid
-source $VICJOUB_PATH/install/desktop/set-app-grid.sh
+source $ONYX_PATH/install/desktop/set-app-grid.sh
 
 # Add new Gnome extensions
-source $VICJOUB_PATH/install/desktop/set-gnome-extensions.sh
+source $ONYX_PATH/install/desktop/set-gnome-extensions.sh
 
 gum style \
 	--foreground 212 --border-foreground 212 --border double \
 	--align left --width 80 --margin "1 2" --padding "2 4" \
 	"1. alacritty.toml config moved to .bak to include new font-size.toml" \
-	"2. Alacritty theme/font has been reset. Use vicjoub app to set again." \
+	"2. Alacritty theme/font has been reset. Use onyx app to set again." \
 	"3. To use Pano, the new clipboard manager, enable in Gnome Extensions."
 
-gum confirm "Set your application dock to default with new apps?" && source $VICJOUB_PATH/install/desktop/set-dock.sh
+gum confirm "Set your application dock to default with new apps?" && source $ONYX_PATH/install/desktop/set-dock.sh
 gum confirm "Ready to logout for all settings to take effect?" && gnome-session-quit --logout --no-prompt

@@ -8,7 +8,7 @@ HISTFILESIZE="${HISTSIZE}"
 source /usr/share/bash-completion/bash_completion
 
 # Set complete path
-export PATH="./bin:$HOME/.local/bin:$HOME/.local/share/vicjoub/bin:$PATH"
+export PATH="./bin:$HOME/.local/bin:$HOME/.local/share/onyx/bin:$PATH"
 set +h
 
-export VICJOUB_PATH="$HOME/.local/share/vicjoub"
+export ONYX_PATH="$HOME/.local/share/onyx"

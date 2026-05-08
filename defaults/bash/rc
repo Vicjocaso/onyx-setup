@@ -1,5 +1,5 @@
-source ~/.local/share/vicjoub/defaults/bash/shell
-source ~/.local/share/vicjoub/defaults/bash/aliases
-source ~/.local/share/vicjoub/defaults/bash/functions
-source ~/.local/share/vicjoub/defaults/bash/prompt
-source ~/.local/share/vicjoub/defaults/bash/init
+source ~/.local/share/onyx/defaults/bash/shell
+source ~/.local/share/onyx/defaults/bash/aliases
+source ~/.local/share/onyx/defaults/bash/functions
+source ~/.local/share/onyx/defaults/bash/prompt
+source ~/.local/share/onyx/defaults/bash/init

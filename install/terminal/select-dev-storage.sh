@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Install default databases
-if [[ -v VICJOUB_FIRST_RUN_DBS ]]; then
-	dbs=$VICJOUB_FIRST_RUN_DBS
+if [[ -v ONYX_FIRST_RUN_DBS ]]; then
+	dbs=$ONYX_FIRST_RUN_DBS
 else
 	AVAILABLE_DBS=("PostgreSQL")
 	dbs=$(gum choose "${AVAILABLE_DBS[@]}" --no-limit --height 3 --header "Select databases (runs in Docker)")

@@ -6,4 +6,4 @@ else
 	SUB=$1
 fi
 
-[ -n "$SUB" ] && [ "$SUB" != "quit" ] && source $VICJOUB_PATH/bin/vicjoub-sub/$SUB.sh
+[ -n "$SUB" ] && [ "$SUB" != "quit" ] && source $ONYX_PATH/bin/onyx-sub/$SUB.sh

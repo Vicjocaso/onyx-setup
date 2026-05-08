@@ -1,6 +1,6 @@
 #!/bin/bash
 
-UNINSTALLER=$(gum file $VICJOUB_PATH/uninstall --height 26)
+UNINSTALLER=$(gum file $ONYX_PATH/uninstall --height 26)
 [ -n "$UNINSTALLER" ] && gum confirm "Run uninstaller?" && source $UNINSTALLER && gum spin --spinner globe --title "Uninstall completed!" -- sleep 3
 clear
-source $VICJOUB_PATH/bin/vicjoub
+source $ONYX_PATH/bin/onyx

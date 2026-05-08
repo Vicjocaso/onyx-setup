@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Install default programming languages
-if [[ -v VICJOUB_FIRST_RUN_LANGUAGES ]]; then
-  languages=$VICJOUB_FIRST_RUN_LANGUAGES
+if [[ -v ONYX_FIRST_RUN_LANGUAGES ]]; then
+  languages=$ONYX_FIRST_RUN_LANGUAGES
 else
   AVAILABLE_LANGUAGES=("Node.js" "Go" "Python")
   languages=$(gum choose "${AVAILABLE_LANGUAGES[@]}" --no-limit --height 5 --header "Select programming languages")

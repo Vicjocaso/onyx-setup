@@ -8,7 +8,7 @@ Comment=System information from Fastfetch
 Exec=bash -c "fastfetch; read -n 1 -s"
 Terminal=true
 Type=Application
-Icon=/home/$USER/.local/share/vicjoub/applications/icons/Ubuntu.png
+Icon=/home/$USER/.local/share/onyx/applications/icons/Ubuntu.png
 Categories=GTK;
 StartupNotify=false
 EOF

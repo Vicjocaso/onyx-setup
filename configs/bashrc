@@ -1,4 +1,4 @@
-source ~/.local/share/vicjoub/defaults/bash/rc
+source ~/.local/share/onyx/defaults/bash/rc
 
 # Editor used by CLI
 export EDITOR="nano"

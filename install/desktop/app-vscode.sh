@@ -14,7 +14,7 @@ sudo apt update
 sudo apt install -y code
 
 mkdir -p ~/.config/Code/User
-cp ~/.local/share/vicjoub/configs/vscode.json ~/.config/Code/User/settings.json
+cp ~/.local/share/onyx/configs/vscode.json ~/.config/Code/User/settings.json
 
 # Install default supported themes
 code --install-extension enkia.tokyo-night

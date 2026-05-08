@@ -4,15 +4,15 @@ THEME_NAMES=("Tokyo Night" "Catppuccin" "Nord" "Everforest" "Gruvbox" "Kanagawa"
 THEME=$(gum choose "${THEME_NAMES[@]}" "<< Back" --header "Choose your theme" --height 12 | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
 
 if [ -n "$THEME" ] && [ "$THEME" != "<<-back" ]; then
-  source $VICJOUB_PATH/themes/$THEME/gnome.sh
+  source $ONYX_PATH/themes/$THEME/gnome.sh
   if gsettings list-schemas 2>/dev/null | grep -q "org.gnome.shell.extensions.tophat"; then
-    source $VICJOUB_PATH/themes/$THEME/tophat.sh
+    source $ONYX_PATH/themes/$THEME/tophat.sh
   fi
-  source $VICJOUB_PATH/themes/$THEME/vscode.sh
+  source $ONYX_PATH/themes/$THEME/vscode.sh
 
   # Forgo setting the Chrome theme until we might find a less disruptive way of doing it.
   # Having to quit Chrome, and all Chrome-based apps, is too much of an inposition.
-  # source $VICJOUB_PATH/themes/$THEME/chrome.sh
+  # source $ONYX_PATH/themes/$THEME/chrome.sh
 fi
 
-source $VICJOUB_PATH/bin/vicjoub-sub/menu.sh
+source $ONYX_PATH/bin/onyx-sub/menu.sh

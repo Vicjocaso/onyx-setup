@@ -1,10 +1,10 @@
 #!/bin/bash
 
-cd $VICJOUB_PATH
+cd $ONYX_PATH
 last_updated_at=$(git log -1 --format=%cd --date=unix)
 git pull
 
-for file in $VICJOUB_PATH/migrations/*.sh; do
+for file in $ONYX_PATH/migrations/*.sh; do
   filename=$(basename "$file")
   migrate_at="${filename%.sh}"
 

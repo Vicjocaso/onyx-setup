@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CHOICES=(
-	"Vicjoub        Update Vicjoub itself and run any migrations"
+	"Onyx        Update Onyx itself and run any migrations"
 	"LazyDocker    TUI for Docker"
 	"<< Back       "
 )
@@ -15,12 +15,12 @@ else
 	INSTALLER=$(echo "$CHOICE" | awk -F ' {2,}' '{print $1}' | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
 
 	case "$INSTALLER" in
-	"vicjoub") INSTALLER_FILE="$VICJOUB_PATH/bin/vicjoub-sub/migrate.sh" ;;
-	*) INSTALLER_FILE="$VICJOUB_PATH/install/terminal/app-$INSTALLER.sh" ;;
+	"onyx") INSTALLER_FILE="$ONYX_PATH/bin/onyx-sub/migrate.sh" ;;
+	*) INSTALLER_FILE="$ONYX_PATH/install/terminal/app-$INSTALLER.sh" ;;
 	esac
 
 	source $INSTALLER_FILE && gum spin --spinner globe --title "Update completed!" -- sleep 3
 fi
 
 clear
-source $VICJOUB_PATH/bin/vicjoub
+source $ONYX_PATH/bin/onyx

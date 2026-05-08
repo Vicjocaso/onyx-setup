@@ -7,7 +7,7 @@ sudo apt install -y fastfetch
 
 # Only attempt to set configuration if fastfetch is not already set
 if [ ! -f "$HOME/.config/fastfetch/config.jsonc" ]; then
-  # Use Vicjoub fastfetch config
+  # Use Onyx fastfetch config
   mkdir -p ~/.config/fastfetch
-  cp ~/.local/share/vicjoub/configs/fastfetch.jsonc ~/.config/fastfetch/config.jsonc
+  cp ~/.local/share/onyx/configs/fastfetch.jsonc ~/.config/fastfetch/config.jsonc
 fi
