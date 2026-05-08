@@ -5,10 +5,10 @@ cat <<EOF >~/.local/share/applications/Vicjoub.desktop
 Version=1.0
 Name=Vicjoub
 Comment=Vicjoub Controls
-Exec=alacritty --config-file /home/$USER/.config/alacritty/pane.toml --class=Vicjoub --title=Vicjoub -e vicjoub
-Terminal=false
+Exec=bash -c "export VICJOUB_PATH=\$HOME/.local/share/vicjoub && export PATH=\$VICJOUB_PATH/bin:\$PATH && bash \$VICJOUB_PATH/bin/vicjoub"
+Terminal=true
 Type=Application
 Icon=/home/$USER/.local/share/vicjoub/applications/icons/Vicjoub.png
-Categories=GTK;
+Categories=GTK;System;
 StartupNotify=false
 EOF

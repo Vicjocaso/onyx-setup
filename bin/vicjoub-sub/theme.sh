@@ -5,7 +5,9 @@ THEME=$(gum choose "${THEME_NAMES[@]}" "<< Back" --header "Choose your theme" --
 
 if [ -n "$THEME" ] && [ "$THEME" != "<<-back" ]; then
   source $VICJOUB_PATH/themes/$THEME/gnome.sh
-  source $VICJOUB_PATH/themes/$THEME/tophat.sh
+  if gsettings list-schemas 2>/dev/null | grep -q "org.gnome.shell.extensions.tophat"; then
+    source $VICJOUB_PATH/themes/$THEME/tophat.sh
+  fi
   source $VICJOUB_PATH/themes/$THEME/vscode.sh
 
   # Forgo setting the Chrome theme until we might find a less disruptive way of doing it.
