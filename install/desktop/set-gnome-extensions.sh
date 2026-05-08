@@ -21,12 +21,9 @@ gext install tophat@fflewddur.github.io
 gext install AlphabeticalAppGrid@stuarthayhurst
 
 # Compile gsettings schemas in order to be able to set them
-sudo cp ~/.local/share/gnome-shell/extensions/tactile@lundal.io/schemas/org.gnome.shell.extensions.tactile.gschema.xml /usr/share/glib-2.0/schemas/
-sudo cp ~/.local/share/gnome-shell/extensions/just-perfection-desktop\@just-perfection/schemas/org.gnome.shell.extensions.just-perfection.gschema.xml /usr/share/glib-2.0/schemas/
-sudo cp ~/.local/share/gnome-shell/extensions/blur-my-shell\@aunetx/schemas/org.gnome.shell.extensions.blur-my-shell.gschema.xml /usr/share/glib-2.0/schemas/
-sudo cp ~/.local/share/gnome-shell/extensions/space-bar\@luchrioh/schemas/org.gnome.shell.extensions.space-bar.gschema.xml /usr/share/glib-2.0/schemas/
-sudo cp ~/.local/share/gnome-shell/extensions/tophat@fflewddur.github.io/schemas/org.gnome.shell.extensions.tophat.gschema.xml /usr/share/glib-2.0/schemas/
-sudo cp ~/.local/share/gnome-shell/extensions/AlphabeticalAppGrid\@stuarthayhurst/schemas/org.gnome.shell.extensions.AlphabeticalAppGrid.gschema.xml /usr/share/glib-2.0/schemas/
+for ext_dir in ~/.local/share/gnome-shell/extensions/*/schemas; do
+  sudo cp "$ext_dir"/*.gschema.xml /usr/share/glib-2.0/schemas/ 2>/dev/null || true
+done
 sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
 
 # Configure Tactile
@@ -39,7 +36,7 @@ gsettings set org.gnome.shell.extensions.tactile row-1 1
 gsettings set org.gnome.shell.extensions.tactile gap-size 32
 
 # Configure Just Perfection
-gsettings set org.gnome.shell.extensions.just-perfection animation 3
+gsettings set org.gnome.shell.extensions.just-perfection animation 5
 gsettings set org.gnome.shell.extensions.just-perfection dash-app-running true
 gsettings set org.gnome.shell.extensions.just-perfection workspace true
 gsettings set org.gnome.shell.extensions.just-perfection workspace-popup false
@@ -58,18 +55,20 @@ gsettings set org.gnome.shell.extensions.blur-my-shell.dash-to-dock sigma 30
 gsettings set org.gnome.shell.extensions.blur-my-shell.dash-to-dock static-blur true
 gsettings set org.gnome.shell.extensions.blur-my-shell.dash-to-dock style-dash-to-dock 0
 
-# Configure Space Bar
-gsettings set org.gnome.shell.extensions.space-bar.behavior smart-workspace-names false
-gsettings set org.gnome.shell.extensions.space-bar.shortcuts enable-activate-workspace-shortcuts false
-gsettings set org.gnome.shell.extensions.space-bar.shortcuts enable-move-to-workspace-shortcuts true
-gsettings set org.gnome.shell.extensions.space-bar.shortcuts open-menu "@as []"
+# Configure Space Bar (may fail if schema not yet available after install)
+if gsettings list-schemas 2>/dev/null | grep -q "org.gnome.shell.extensions.space-bar"; then
+  gsettings set org.gnome.shell.extensions.space-bar.behavior smart-workspace-names false
+  gsettings set org.gnome.shell.extensions.space-bar.shortcuts enable-activate-workspace-shortcuts false
+  gsettings set org.gnome.shell.extensions.space-bar.shortcuts enable-move-to-workspace-shortcuts true
+  gsettings set org.gnome.shell.extensions.space-bar.shortcuts open-menu "@as []"
+fi
 
 # Configure TopHat
-gsettings set org.gnome.shell.extensions.tophat show-icons false
-gsettings set org.gnome.shell.extensions.tophat show-cpu false
-gsettings set org.gnome.shell.extensions.tophat show-disk false
-gsettings set org.gnome.shell.extensions.tophat show-mem false
-gsettings set org.gnome.shell.extensions.tophat show-fs false
+gsettings set org.gnome.shell.extensions.tophat show-icons true
+gsettings set org.gnome.shell.extensions.tophat show-cpu true
+gsettings set org.gnome.shell.extensions.tophat show-disk true
+gsettings set org.gnome.shell.extensions.tophat show-mem true
+gsettings set org.gnome.shell.extensions.tophat show-fs true
 gsettings set org.gnome.shell.extensions.tophat network-usage-unit bits
 
 # Configure AlphabeticalAppGrid
