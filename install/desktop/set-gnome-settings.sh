@@ -11,3 +11,9 @@ gsettings set org.gnome.desktop.calendar show-weekdate true
 
 # Turn off ambient sensors for setting screen brightness (they rarely work well!)
 gsettings set org.gnome.settings-daemon.plugins.power ambient-enabled false
+
+# Enable hot corner for Activities overview
+gsettings set org.gnome.desktop.interface enable-hot-corners true
+
+# Enable screen edge multitasking
+gsettings set org.gnome.mutter edge-tiling true
