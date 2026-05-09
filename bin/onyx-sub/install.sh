@@ -8,6 +8,7 @@ CHOICES=(
   "Discord           Communication platform for voice, video, and text messaging"
   "Geekbench         CPU benchmaking tool"
   "OpenRGB           Control RGB lighting on your hardware"
+  "Bruno             Open-source API client for testing and exploring APIs"
   "Postman           API development and testing platform"
   "Spotify           Stream music from the world's most popular service"
   "Steam             Play games from Valve's store"

@@ -2,7 +2,7 @@
 
 # Only ask for default desktop app choices when running Gnome
 if [[ "$XDG_CURRENT_DESKTOP" == *"GNOME"* ]]; then
-  OPTIONAL_APPS=("Spotify" "Discord" "Steam" "TablePlus" "Postman" "Warp" "OpenRGB" "Cursor" "Zed")
+  OPTIONAL_APPS=("Spotify" "Discord" "Steam" "TablePlus" "Postman" "Bruno" "Warp" "OpenRGB" "Cursor" "Zed")
   DEFAULT_OPTIONAL_APPS='Spotify'
   export ONYX_FIRST_RUN_OPTIONAL_APPS=$(gum choose "${OPTIONAL_APPS[@]}" --no-limit --selected $DEFAULT_OPTIONAL_APPS --height 11 --header "Select optional apps" | tr ' ' '-')
 fi
