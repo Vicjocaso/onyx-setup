@@ -92,12 +92,14 @@ Onyx ships with multiple themes that change your desktop, terminal, and VS Code 
 
 - Tokyo Night
 - Catppuccin
-- Dracula
+- Nord
+- Everforest
 - Gruvbox
 - Kanagawa
-- Nord
+- Ristretto
 - Rose Pine
-- And more...
+- Matte Black
+- Osaka Jade
 
 ## Post-Install
 
