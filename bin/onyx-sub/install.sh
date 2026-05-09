@@ -4,7 +4,9 @@ CHOICES=(
   "Dev Editor        Install alternative programming editors"
   "Dev Language      Install programming language environment"
   "Dev Database      Install development database in Docker"
+  "Antigravity       AI-powered IDE by Google with Gemini 3 Pro"
   "ASDControl        Set brightness on Apple Studio and XDR displays"
+  "Bitwarden         Open-source password manager"
   "Discord           Communication platform for voice, video, and text messaging"
   "Geekbench         CPU benchmaking tool"
   "OpenRGB           Control RGB lighting on your hardware"
@@ -19,7 +21,7 @@ CHOICES=(
   "<< Back           "
 )
 
-CHOICE=$(gum choose "${CHOICES[@]}" --height 18 --header "Install application")
+CHOICE=$(gum choose "${CHOICES[@]}" --height 21 --header "Install application")
 
 if [[ "$CHOICE" == "<< Back"* ]] || [[ -z "$CHOICE" ]]; then
   # Don't install anything

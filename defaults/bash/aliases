@@ -10,6 +10,7 @@ alias ....='cd ../../..'
 alias g='git'
 alias d='docker'
 alias lzd='lazydocker'
+alias agy='antigravity'
 
 # Git
 alias gcm='git commit -m'
