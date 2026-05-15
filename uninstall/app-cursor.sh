@@ -1,4 +1,5 @@
 #!/bin/bash
 
-sudo rm /opt/cursor.appimage
-sudo rm /usr/share/applications/cursor.desktop
+sudo apt remove -y cursor
+sudo rm -f /opt/cursor.appimage
+sudo rm -f /usr/share/applications/cursor.desktop

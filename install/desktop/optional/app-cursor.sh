@@ -1,26 +1,10 @@
 #!/bin/bash
 
-cd /tmp
-curl -L "https://www.cursor.com/api/download?platform=linux-x64&releaseTrack=stable" | jq -r '.downloadUrl' | xargs curl -L -o cursor.appimage
-sudo mv cursor.appimage /opt/cursor.appimage
-sudo chmod +x /opt/cursor.appimage
-sudo apt install -y fuse3
-sudo apt install -y libfuse2t64
-
-DESKTOP_FILE="/usr/share/applications/cursor.desktop"
-
-sudo bash -c "cat > $DESKTOP_FILE" <<EOL
-[Desktop Entry]
-Name=Cursor
-Comment=AI-powered code editor
-Exec=/opt/cursor.appimage --no-sandbox
-Icon=/home/$USER/.local/share/onyx/applications/icons/cursor.png
-Type=Application
-Categories=Development;IDE;
-EOL
-
-if [ -f "$DESKTOP_FILE" ]; then
-	echo "cursor.desktop created successfully"
-else
-	echo "Failed to create cursor.desktop"
+# AI-powered code editor. See https://cursor.com/
+if [ ! -f /etc/apt/sources.list.d/cursor.list ]; then
+	curl -fsSL https://downloads.cursor.com/keys/anysphere.asc | gpg --dearmor | sudo tee /etc/apt/keyrings/cursor.gpg > /dev/null
+	echo "deb [arch=amd64,arm64 signed-by=/etc/apt/keyrings/cursor.gpg] https://downloads.cursor.com/aptrepo stable main" | sudo tee /etc/apt/sources.list.d/cursor.list > /dev/null
 fi
+
+sudo apt update
+sudo apt install -y cursor
