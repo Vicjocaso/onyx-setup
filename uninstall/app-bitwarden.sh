@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo snap remove bitwarden
+flatpak uninstall -y com.bitwarden.desktop
