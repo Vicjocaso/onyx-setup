@@ -4,8 +4,8 @@
 if [[ -v ONYX_FIRST_RUN_LANGUAGES ]]; then
   languages=$ONYX_FIRST_RUN_LANGUAGES
 else
-  AVAILABLE_LANGUAGES=("Node.js" "Go" "Python")
-  languages=$(gum choose "${AVAILABLE_LANGUAGES[@]}" --no-limit --height 5 --header "Select programming languages")
+  AVAILABLE_LANGUAGES=("Node.js" "Go" "Python" "<< Back")
+  languages=$(gum choose "${AVAILABLE_LANGUAGES[@]}" --no-limit --height 6 --header "Select programming languages")
 fi
 
 if [[ -n "$languages" ]]; then

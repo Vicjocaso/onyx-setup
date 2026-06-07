@@ -2,8 +2,8 @@
 
 source $ONYX_PATH/defaults/bash/functions
 
-AVAILABLE_WEB_APPS=("Chat GPT" "Gemini" "Grok" "Google Photos" "Google Contacts")
-apps=$(gum choose "${AVAILABLE_WEB_APPS[@]}" --no-limit --height 7 --header "Select web apps")
+AVAILABLE_WEB_APPS=("Chat GPT" "Gemini" "Grok" "Google Photos" "Google Contacts" "<< Back")
+apps=$(gum choose "${AVAILABLE_WEB_APPS[@]}" --no-limit --height 8 --header "Select web apps")
 
 if [[ -n "$apps" ]]; then
   IFS=$'\n'

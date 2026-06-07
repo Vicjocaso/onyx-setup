@@ -4,8 +4,8 @@
 if [[ -v ONYX_FIRST_RUN_DBS ]]; then
 	dbs=$ONYX_FIRST_RUN_DBS
 else
-	AVAILABLE_DBS=("PostgreSQL")
-	dbs=$(gum choose "${AVAILABLE_DBS[@]}" --no-limit --height 3 --header "Select databases (runs in Docker)")
+	AVAILABLE_DBS=("PostgreSQL" "<< Back")
+	dbs=$(gum choose "${AVAILABLE_DBS[@]}" --no-limit --height 4 --header "Select databases (runs in Docker)")
 fi
 
 if [[ -n "$dbs" ]]; then

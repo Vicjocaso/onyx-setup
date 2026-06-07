@@ -55,6 +55,7 @@ Onyx sets up a complete development environment with sensible defaults so you ca
 | OpenRGB | RGB lighting control |
 | Cursor | AI code editor |
 | Zed | High-performance editor |
+| Zen Browser | Privacy-focused browser built on Firefox |
 | Antigravity | Google AI IDE with Gemini |
 
 ### Dev Languages (via mise)
