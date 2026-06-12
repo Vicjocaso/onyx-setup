@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo dnf install -y gnome-shell-extension-manager libgtop2 clutter
+sudo dnf install -y --skip-unavailable gnome-shell-extension-manager libgtop2 clutter
 pipx install gnome-extensions-cli --system-site-packages
 
 # Pause to assure user is ready to accept confirmations
