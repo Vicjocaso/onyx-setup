@@ -1,5 +1,9 @@
 #!/bin/bash
 
 # Database management tool — https://tableplus.com
-# TablePlus does not provide an RPM repo; use Flatpak instead
-flatpak install -y flathub com.tableplus.TablePlus
+if [ ! -f /etc/yum.repos.d/tableplus.repo ]; then
+  sudo rpm -v --import https://yum.tableplus.com/apt.tableplus.com.gpg.key
+  sudo dnf config-manager addrepo --from-repofile=https://yum.tableplus.com/rpm/x86_64/tableplus.repo
+fi
+
+sudo dnf install -y tableplus
