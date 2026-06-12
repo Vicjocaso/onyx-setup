@@ -10,11 +10,16 @@ echo " ██    ██ ██  ██ ██    ██     ██ ██"
 echo "  ██████  ██   ████    ██    ██   ██"
 echo "          artificial-softworks"
 echo ""
-echo "=> Onyx is for fresh Ubuntu 26.04 LTS installations only!"
+echo "=> Onyx supports Ubuntu 26.04 LTS and Fedora 40+."
 echo -e "\nBegin installation (or abort with ctrl+c)..."
 
-sudo apt-get update >/dev/null
-sudo apt-get install -y git >/dev/null
+. /etc/os-release
+if [ "$ID" = "fedora" ]; then
+  sudo dnf install -y git >/dev/null
+else
+  sudo apt-get update >/dev/null
+  sudo apt-get install -y git >/dev/null
+fi
 
 echo "Cloning Onyx..."
 rm -rf ~/.local/share/onyx
@@ -26,4 +31,9 @@ if [[ $ONYX_REF != "master" ]]; then
 fi
 
 echo "Installation starting..."
-source ~/.local/share/onyx/install.sh
+. /etc/os-release
+if [ "$ID" = "fedora" ]; then
+  source ~/.local/share/onyx/fedora/install.sh
+else
+  source ~/.local/share/onyx/install.sh
+fi
