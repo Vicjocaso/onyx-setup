@@ -1,6 +1,5 @@
 #!/bin/bash
 
-sudo dnf copr enable -y tsujan/ulauncher
 sudo dnf install -y ulauncher
 
 # Start ulauncher to have it populate config before we overwrite
